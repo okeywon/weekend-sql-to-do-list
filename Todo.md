@@ -11,15 +11,15 @@ App setup
 
 Create the app
     [x] html - inputs from user for to-do tasks
-        [ ] Task id
-        [ ] Task description
-        [ ] Task due date
+        [x] Task id
+        [x] Task description
+        [x] Task due date
         [ ] Complete button
         [ ] Delete button
     [ ] client - POST/GET/PUT/DELETE/Inputs Object/Click listeners
         [ ] PUT function should change task background to green, complete should be "checked off"
-    [ ] server - express, body parser, pool, router, database
-    [ ] Router - POST/GET/PUT/DELETE
+    [x] server - express, body parser, pool, router, database
+    [x] Router - POST/GET/PUT/DELETE
     [ ] CSS styling:
         - background color of the page
         - font family and size

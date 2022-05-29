@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="/server/jquery.js"></script>
-    <script src="/server/public/client.js"></script>
+    <script src="./jquery.js"></script>
+    <script src="client.js"></script>
     <title>To-Do App</title>
 </head>
 <body>
@@ -15,19 +15,24 @@
         <input type="text" id="taskName" placeholder="Task Name">
         <input type="text" id="taskDescription" placeholder="Task Description">
         <input type="date" id="taskDate" placeholder="Due Date">
-        <!-- <input type="submit" id="submitBtn">  -->
+        <select id="isComplete">
+            <option value="complete">Select</option>
+            <option value="complete">Yes</option>
+            <option value="pending">No</option>
+        </select>
+        <input type="submit" id="submitBtn"> 
     </form>
-    <table>
+    <table id="table">
         <thead>
             <tr>
                 <td>Task</td>
                 <td>Description</td>
                 <td>Due Date</td>
-                <td>Complete Status</td>
+                <td>Task Complete?</td>
                 <td>Delete?</td>
             </tr>
         </thead>
-        <tbody>
+        <tbody id="tbody">
 
         </tbody>
     </table>
