@@ -61,8 +61,7 @@ router.get("/", (req, res) => {
             console.log(`PUT to db failed: ${err}`);
             res.sendStatus(500);
         });
-  })
-  // DELETE
+  });
   
   router.delete('/:id', (req,res ) => {
       let taskId = req.params.id

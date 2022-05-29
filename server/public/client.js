@@ -82,9 +82,43 @@ function displayTable(response){
 }
 
 function completeTask(){
-
+    let taskId = $(this).parents("tr").data("id");
+    let completed = $(this).parents("tr").data("isComplete");
+    
+  
+    console.log("in PUT client side", completed);
+    const completeTask = {
+      isComplete: true,
+    };
+  
+    $.ajax({
+      method: "PUT",
+      url: `/todo/${taskId}`,
+      data: completeTask,
+    })
+      .then((res) => {
+        console.log("PUT request working");
+        getKoalas();
+      })
+      .catch((err) => {
+        console.log("error in PUT client side", err);
+      });
 }
 
 function deleteTask(){
     console.log('click');
+    let tr = $(this).parents("tr");
+    let taskId = tr.data("id");
+
+    $.ajax({
+        method: "DELETE",
+        url: `/todo/${taskId}`,
+      })
+        .then(() => {
+          console.log("DELETE Success");
+          getKoalas();
+        })
+        .catch((err) => {
+          console.log("DELETE failed client side", err);
+        });
 }
