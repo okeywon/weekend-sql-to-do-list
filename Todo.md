@@ -1,16 +1,16 @@
 App setup
     [x] npm init, install express, nodemon, pg, body-parser
     [x] .gitignore => modules file to ignore
-    [ ] html links to jquery.js, client.js, css etc
-    [ ] jquery
-    [ ] client.js
-    [ ] server.js
-    [ ] router.js - export
-    [ ] modules/pool.js - export
-    [ ] database.sql 'weekend-to-do-app' with table and queries
+    [x] html links to jquery.js, client.js, css etc
+    [x] jquery
+    [x] client.js
+    [x] server.js
+    [x] router.js - export
+    [x] modules/pool.js - export
+    [x] database.sql 'weekend-to-do-app' with table and queries
 
 Create the app
-    [ ] html - inputs from user for to-do tasks
+    [x] html - inputs from user for to-do tasks
         [ ] Task id
         [ ] Task description
         [ ] Task due date
