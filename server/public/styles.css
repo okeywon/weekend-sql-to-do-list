@@ -1,0 +1,18 @@
+body {
+    background-color: lightcyan;
+}
+
+h1 {
+    font-family: cursive;
+    color: rgb(0, 94, 13)
+}
+
+h3 {
+    font-family: monospace;
+}
+
+#table, tr , td {
+    font-family: monospace;
+    border-style: double;
+    border-width: 1px darkcyan;
+}

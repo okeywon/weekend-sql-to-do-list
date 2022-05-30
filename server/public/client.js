@@ -80,14 +80,16 @@ function displayTable(response){
         $('.complete').last().append(`
         <button>True</button>
         `);
+        $(this).parents('tr').css('background-color', 'green');
+        $(this).parents('tr').css('text-decoration', 'line-through');
     }
 }
 
-function completeTask(){
+function completeTask(e){
+  e.preventDefault();
     let taskId = $(this).parents("tr").data("id");
     let completed = $(this).parents("tr").data("isComplete");
-    
-  
+
     console.log("in PUT client side", completed);
     const completeTask = {
       completed: true,
@@ -105,6 +107,9 @@ function completeTask(){
       .catch((err) => {
         console.log("error in PUT client side", err);
       });
+
+  $(this).parents('tr').css('background-color', 'green');
+  $(this).parents('tr').css('text-decoration', 'line-through');
 }
 
 function deleteTask(){
