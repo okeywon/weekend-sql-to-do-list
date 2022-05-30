@@ -23,6 +23,7 @@ function addNewTask(e){
 }
 
 function getTasks(){
+    $('#table').empty();
     console.log("in getTasks");
 
     $.ajax({
@@ -55,6 +56,7 @@ function saveNewTask(newTask){
 }
 
 function displayTable(response){
+    $('#table').empty();
     for (let i = 0; i < response.length; i++){
         let task = response[i];
         $('#table').append(`
@@ -62,21 +64,21 @@ function displayTable(response){
             <td>${task.task}</td>
             <td>${task.description}</td>
             <td>${task.due}</td>
-            <td class="complete"><button>No</button></td>
+            <td class="complete"><button>${task.isComplete}</button></td>
             <td class="delete"><button>Delete</button></td>
         </tr>
         `);
     }
-    if ('task.isComplete' === false){
+    if ('newTask.isComplete' === false){
         $('.complete').empty();
         $('.complete').last().append(`
-        <button class="completeBtn">No</button>
+        <button>False</button>
         `);
     }
-    else if ('task.isComplete' === true){
+    else if ('newTask.isComplete' === true){
         $('.complete').empty();
         $('.complete').last().append(`
-        <button class="completeBtn">Yes</button>
+        <button>True</button>
         `);
     }
 }
@@ -88,9 +90,9 @@ function completeTask(){
   
     console.log("in PUT client side", completed);
     const completeTask = {
-      isComplete: true,
+      completed: true,
     };
-  
+    console.log(completeTask);
     $.ajax({
       method: "PUT",
       url: `/todo/${taskId}`,
@@ -98,7 +100,7 @@ function completeTask(){
     })
       .then((res) => {
         console.log("PUT request working");
-        getKoalas();
+        getTasks();
       })
       .catch((err) => {
         console.log("error in PUT client side", err);
@@ -116,7 +118,7 @@ function deleteTask(){
       })
         .then(() => {
           console.log("DELETE Success");
-          getKoalas();
+          getTasks();
         })
         .catch((err) => {
           console.log("DELETE failed client side", err);

@@ -50,7 +50,7 @@ router.get("/", (req, res) => {
   
     const sqlParams = [
         taskId, // $1
-        req.body.complete // $2, 
+        req.body.completed // $2, 
     ]
   
     pool.query(sqlQuery, sqlParams)
@@ -61,6 +61,7 @@ router.get("/", (req, res) => {
             console.log(`PUT to db failed: ${err}`);
             res.sendStatus(500);
         });
+        console.log(req.body.completed);
   });
   
   router.delete('/:id', (req,res ) => {
